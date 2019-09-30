@@ -1,26 +1,26 @@
-import React from 'react';
-import TodoList from './components/TodoComponents/TodoList';
-import TodoForm from './components/TodoComponents/TodoForm';
-import './components/TodoComponents/Todo.css';
+import React from "react";
+import TodoList from "./components/TodoComponents/TodoList";
+import TodoForm from "./components/TodoComponents/TodoForm";
+import "./components/TodoComponents/Todo.css";
 
 const todoData = [
   {
-    task: 'Organize Garage',
+    task: "Organize Garage",
     id: 1,
     completed: false
   },
   {
-    task: 'Bake Cookies',
+    task: "Bake Cookies",
     id: 2,
     completed: false
   },
   {
-    task: 'Take out Trash',
+    task: "Take out Trash",
     id: 3,
     completed: false
   },
   {
-    task: 'Pay Bills',
+    task: "Pay Bills",
     id: 4,
     completed: false
   }
@@ -54,13 +54,13 @@ class App extends React.Component {
 
     this.setState({
       todoData: this.state.todoData.map(todo => {
-        if(todoId === todo.id) {
+        if (todoId === todo.id) {
           return {
             ...todo,
             completed: !todo.completed
           };
         }
-          return todo;
+        return todo;
       })
     });
   };
@@ -73,14 +73,18 @@ class App extends React.Component {
   };
 
   render() {
-    console.log('rendering...');
+    console.log("rendering...");
     return (
-      <div className="App">
+      <div className="app">
         <div className="header">
-        <h1>Todos!</h1>
-        <TodoForm addTodo={this.addTodo} />
+          <h1>Todos!</h1>
+          <TodoForm addTodo={this.addTodo} />
         </div>
-      <TodoList todoData={this.state.todoData} toggleTodo={this.toggleTodo} clearCompleted={this.clearCompleted} />
+        <TodoList
+          todoData={this.state.todoData}
+          toggleTodo={this.toggleTodo}
+          clearCompleted={this.clearCompleted}
+        />
       </div>
     );
   }
