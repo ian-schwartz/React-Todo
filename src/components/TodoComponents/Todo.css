@@ -1,0 +1,21 @@
+body {
+    background-color: cadetblue;
+}
+
+.app {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.todo-btn {
+    margin-left: 10px;
+}
+
+.todo {
+    cursor: pointer;
+}
+
+.todo.completed {
+    text-decoration: line-through;
+}
